@@ -1,259 +1,347 @@
-<?php
-
-$url = "";
-
-?>
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="fa">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IsVpn</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link href="https://v1.fontapi.ir/css/ُShabnam" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>خرید وی‌پی‌ان 46 | طرح‌های ویژه رمضانی</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #fff;
+            direction: rtl;
+            font-family: Vazirmatn, sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            overscroll-behavior: contain;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .discount-banner {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            border-radius: 20px;
+            margin: 15px;
+            padding: 1.2rem;
+            box-shadow: 0 8px 40px rgba(243, 156, 18, 0.25);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.1);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        .discount-title {
+            font-size: 1.4rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .discount-subtitle {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #ffecb3;
+            margin-bottom: 1.2rem;
+        }
+
+        .methods-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            padding: 0 15px 15px;
+            flex: 1;
+        }
+
+        .method-card {
+            background: linear-gradient(145deg, #1a1a1a, #252525);
+            border-radius: 18px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .method-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #f39c12 0%, #e67e22 100%);
+        }
+
+        .method-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 0;
+            font-size: 0.9rem;
+        }
+
+        .feature-item::before {
+            content: '✔';
+            color: #2ecc71;
+            font-weight: 700;
+        }
+
+        .action-button {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            border-radius: 12px;
+            color: #fff;
+            padding: 1rem;
+            width: 100%;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .action-button:active {
+            transform: scale(0.98);
+            opacity: 0.9;
+        }
+
+        .os-banner {
+            border-radius: 16px;
+            margin: 0 0 1.5rem;
+            padding: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .android-banner {
+            background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+        }
+
+        .telegram-banner {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+
+        .banner-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .banner-icon {
+            font-size: 2.5rem;
+            color: #ffffff;
+        }
+
+        .comments-section {
+            background: #1a1a1a;
+            border-radius: 18px;
+            margin: 15px;
+            padding: 1.5rem;
+        }
+
+        .comments-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #f1c40f;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .comment {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .user {
+            color: #f39c12;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stars {
+            color: #f1c40f;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: #f39c12;
+        }
+
+        @media (min-width: 480px) {
+            .methods-container {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+    </style>
 </head>
-<style>
-    :root, [data-bs-theme=light] {
-    --bs-blue: #0d6efd;
-    --bs-indigo: #6610f2;
-    --bs-purple: #6f42c1;
-    --bs-pink: #d63384;
-    --bs-red: #dc3545;
-    --bs-orange: #fd7e14;
-    --bs-yellow: #ffc107;
-    --bs-green: #198754;
-    --bs-teal: #20c997;
-    --bs-cyan: #0dcaf0;
-    --bs-black: #000;
-    --bs-white: #fff;
-    --bs-gray: #6c757d;
-    --bs-gray-dark: #343a40;
-    --bs-gray-100: #f8f9fa;
-    --bs-gray-200: #e9ecef;
-    --bs-gray-300: #dee2e6;
-    --bs-gray-400: #ced4da;
-    --bs-gray-500: #adb5bd;
-    --bs-gray-600: #6c757d;
-    --bs-gray-700: #495057;
-    --bs-gray-800: #343a40;
-    --bs-gray-900: #212529;
-    --bs-primary: #0d6efd;
-    --bs-secondary: #6c757d;
-    --bs-success: #198754;
-    --bs-info: #0dcaf0;
-    --bs-warning: #ffc107;
-    --bs-danger: #dc3545;
-    --bs-light: #f8f9fa;
-    --bs-dark: #212529;
-    --bs-primary-rgb: 13,110,253;
-    --bs-secondary-rgb: 108,117,125;
-    --bs-success-rgb: 25,135,84;
-    --bs-info-rgb: 13,202,240;
-    --bs-warning-rgb: 255,193,7;
-    --bs-danger-rgb: 220,53,69;
-    --bs-light-rgb: 248,249,250;
-    --bs-dark-rgb: 33,37,41;
-    --bs-primary-text: #0a58ca;
-    --bs-secondary-text: #6c757d;
-    --bs-success-text: #146c43;
-    --bs-info-text: #087990;
-    --bs-warning-text: #997404;
-    --bs-danger-text: #b02a37;
-    --bs-light-text: #6c757d;
-    --bs-dark-text: #495057;
-    --bs-primary-bg-subtle: #cfe2ff;
-    --bs-secondary-bg-subtle: #f8f9fa;
-    --bs-success-bg-subtle: #d1e7dd;
-    --bs-info-bg-subtle: #cff4fc;
-    --bs-warning-bg-subtle: #fff3cd;
-    --bs-danger-bg-subtle: #f8d7da;
-    --bs-light-bg-subtle: #fcfcfd;
-    --bs-dark-bg-subtle: #ced4da;
-    --bs-primary-border-subtle: #9ec5fe;
-    --bs-secondary-border-subtle: #e9ecef;
-    --bs-success-border-subtle: #a3cfbb;
-    --bs-info-border-subtle: #9eeaf9;
-    --bs-warning-border-subtle: #ffe69c;
-    --bs-danger-border-subtle: #f1aeb5;
-    --bs-light-border-subtle: #e9ecef;
-    --bs-dark-border-subtle: #adb5bd;
-    --bs-white-rgb: 255,255,255;
-    --bs-black-rgb: 0,0,0;
-    --bs-body-color-rgb: 33,37,41;
-    --bs-body-bg-rgb: 255,255,255;
-    --bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-    --bs-body-font-family: var(--bs-font-sans-serif);
-    --bs-body-font-size: 1rem;
-    --bs-body-font-weight: 400;
-    --bs-body-line-height: 1.5;
-    --bs-body-color: #212529;
-    --bs-emphasis-color: #000;
-    --bs-emphasis-color-rgb: 0,0,0;
-    --bs-secondary-color: rgba(33, 37, 41, 0.75);
-    --bs-secondary-color-rgb: 33,37,41;
-    --bs-secondary-bg: #e9ecef;
-    --bs-secondary-bg-rgb: 233,236,239;
-    --bs-tertiary-color: rgba(33, 37, 41, 0.5);
-    --bs-tertiary-color-rgb: 33,37,41;
-    --bs-tertiary-bg: #f8f9fa;
-    --bs-tertiary-bg-rgb: 248,249,250;
-    --bs-body-bg: #fff;
-    --bs-body-bg-rgb: 255,255,255;
-    --bs-link-color: #0d6efd;
-    --bs-link-color-rgb: 13,110,253;
-    --bs-link-decoration: underline;
-    --bs-link-hover-color: #0a58ca;
-    --bs-link-hover-color-rgb: 10,88,202;
-    --bs-code-color: #d63384;
-    --bs-highlight-bg: #fff3cd;
-    --bs-border-width: 1px;
-    --bs-border-style: solid;
-    --bs-border-color: #dee2e6;
-    --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
-    --bs-border-radius: 0px;
-    --bs-border-radius-sm: 0.25rem;
-    --bs-border-radius-lg: 0.5rem;
-    --bs-border-radius-xl: 1rem;
-    --bs-border-radius-2xl: 2rem;
-    --bs-border-radius-pill: 50rem;
-    --bs-box-shadow: 0 0.5rem 1rem rgba(var(--bs-body-color-rgb), 0.15);
-    --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(var(--bs-body-color-rgb), 0.075);
-    --bs-box-shadow-lg: 0 1rem 3rem rgba(var(--bs-body-color-rgb), 0.175);
-    --bs-box-shadow-inset: inset 0 1px 2px rgba(var(--bs-body-color-rgb), 0.075);
-    --bs-emphasis-color: #000;
-    --bs-form-control-bg: var(--bs-body-bg);
-    --bs-form-control-disabled-bg: var(--bs-secondary-bg);
-    --bs-highlight-bg: #fff3cd;
-    --bs-breakpoint-xs: 0;
-    --bs-breakpoint-sm: 576px;
-    --bs-breakpoint-md: 768px;
-    --bs-breakpoint-lg: 992px;
-    --bs-breakpoint-xl: 1200px;
-    --bs-breakpoint-xxl: 1400px;
-}
-    * {
-        font-family: "Shabnam" !important;
-    }
-
-    .staff {
-        display: flex;
-        height: 10rem;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .bg-pruple {
-        background-color: #9932cc;
-    }
-
-    .price {
-        display: flex;
-    }
-
-    .price-1 {
-        background-color: #efe3f5;
-        border: 2px solid transparent;
-        color: #000;
-        padding: 10px;
-        height: 200px;
-    }
-
-    .price-2 {
-        background-color: #efe3f5;
-        border: 2px solid transparent;
-        color: #000;
-        padding: 10px;
-        height: 200px;
-
-    }
-
-    h5 {
-        font-size: 12px !important;
-    }
-
-    @media only screen and (min-width: 768px) {
-  /* For desktop: */
-  body{
-    display: flex;
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-</style>
-
-<body class="bg-dark">
-    <div class="container text-center">
-        <div class="row text-light">
-            <div class="col-6 bg-primary staff">
-                <h4>خرید سرویس</h4>
-            </div>
-            <div class="col-6 bg-danger staff">
-                <h4>پشتیبانی</h4>
-            </div>
-            <div class="col-6 bg-success staff">
-                <h4>راهنما</h4>
-            </div>
-            <div class="col-6 bg-warning staff">
-                <h4>حساب کاربری</h4>
-            </div>
-            <hr>
-        </div>
-        <form action="<?php echo("$url/payment"); ?>" method="post">
-        <div class="col-12 price-1 bg-dark text-light">
-            <h5>یک ماهه</h5>
-            <h5>بیست هزار تومان</h5>
-            <h5>حجم : صد گیگابیت</h5>
-            <h5>تعویض خودکار ایپی</h5>
-            <h5>دارای پروتکل امنیتی</h5>
-            <h5>تک کاربره</h5>
-            <button type="submit" class="btn btn-light">خرید سرویس</button>
-        </div>
-        <div class="col-12 price-2 bg-secondary text-light">
-            <h5>سه ماهه</h5>
-            <h5>چهل هزار تومان</h5>
-            <h5>حجم : پانصد گیگابیت</h5>
-            <h5>تعویض خودکار ایپی</h5>
-            <h5>دارای پروتکل امنیتی</h5>
-            <h5>بیست کاربره</h5>
-            <button type="submit" class="btn btn btn-light">خرید سرویس</button>
-        </div>
-        <div class="col-12 price-1 bg-dark text-light">
-            <h5>شش ماهه</h5>
-            <h5>شصت هزار تومان</h5>
-            <h5>حجم : یک ترابایت</h5>
-            <h5>تعویض خودکار ایپی</h5>
-            <h5>دارای پروتکل امنیتی</h5>
-            <h5>پنجاه کاربره</h5>
-            <button type="submit" class="btn btn btn-light">خرید سرویس</button>
-        </div>
-        <div class="col-12 price-2 bg-secondary text-light">
-            <h5>یک ساله</h5>
-            <h5>نود هزار تومان</h5>
-            <h5>حجم : نامحدود</h5>
-            <h5>تعویض خودکار ایپی</h5>
-            <h5>دارای پروتکل امنیتی</h5>
-            <h5>نامحدود کاربره</h5>
-            <button type="submit" class="btn btn btn-light">خرید سرویس</button>
-        </div>
-    </form>
-        <div class="col-12 card text-bg-primary">
-            <div class="card-header">اتصال کاربران</div>
-            <div class="card-body">
-              <h5 class="card-title">پشتیبانی تلگرام</h5>
-              <p class="card-text">پشتیبانی واتساپ</p>
-            </div>
-          </div>
+<body>
+    <div class="discount-banner">
+        <h2 class="discount-title">🔥 تخفیف ویژه رمضانی! 🔥</h2>
+        <p class="discount-subtitle">۳۰٪ تخفیف + پشتیبانی 24 ساعته</p>
     </div>
+
+    <div class="methods-container">
+        <!-- روش اندروید -->
+        <div class="method-card">
+            <div class="os-banner android-banner">
+                <div class="banner-content">
+                    <i class="fab fa-android banner-icon"></i>
+                    <div>
+                        <h3 class="banner-title">اپلیکیشن اختصاصی</h3>
+                        <p>مخصوص کاربران اندروید</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="method-title">ویژگی‌های اپلیکیشن</h3>
+            <ul class="features-list">
+                <li class="feature-item">دانلود و نصب سریع</li>
+                <li class="feature-item">پرداخت امن درون‌برنامه‌ای</li>
+                <li class="feature-item">پشتیبانی فوری 24/7</li>
+                <li class="feature-item">بهینه‌سازی مصرف باتری</li>
+            </ul>
+            <a href="https://ibkri.com/images/1/download.html" class="action-button">دریافت اپلیکیشن (کلیک کنید)</a>
+        </div>
+
+        <!-- روش تلگرام -->
+        <div class="method-card">
+            <div class="os-banner telegram-banner">
+                <div class="banner-content">
+                    <i class="fab fa-telegram banner-icon"></i>
+                    <div>
+                        <h3 class="banner-title">بات تلگرام</h3>
+                        <p>ویندوز، iOS و سایر پلتفرم‌ها</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="method-title">ویژگی‌های بات</h3>
+            <ul class="features-list">
+                <li class="feature-item">پرداخت سریع درون‌باتی</li>
+                <li class="feature-item">پشتیبانی هوشمند</li>
+                <li class="feature-item">آپدیت لحظه‌ای</li>
+                <li class="feature-item">تنظیمات پیشرفته</li>
+            </ul>
+            <a href="https://t.me/VPN46BOT" class="action-button">ورود به بات تلگرام</a>
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+
+    <!-- بخش نظرات کاربران -->
+    <div class="comments-section">
+        <h3 class="comments-title">نظرات کاربران</h3>
+        <div class="comment">
+            <div class="user">محمد ★★★★★</div>
+            <div class="text">بهترین وی‌پی‌ان با سرعت عالی و پشتیبانی فوق‌العاده</div>
+        </div>
+        <div class="comment">
+            <div class="user">فاطمه ★★★★☆</div>
+            <div class="text">کیفیت خوب ولی قیمت‌ها کمی بالاست</div>
+        </div>
+        <div class="comment">
+            <div class="user">علی ★★★★★</div>
+            <div class="text">پیشنهاد می‌کنم واقعا ارزشش رو داره</div>
+        </div>
+    </div>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="social-links">
+            <a href="https://instagram.com/vpn46" aria-label="اینستاگرام"><i class="fab fa-instagram"></i></a>
+            <a href="https://t.me/VPN46BOT" aria-label="تلگرام"><i class="fab fa-telegram"></i></a>
+            <a href="https://twitter.com/vpn46" aria-label="توییتر"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>تمامی حقوق برای وی‌پی‌ان 46 محفوظ است. © ۱۴۰۲</p>
+    </footer>
+
+    <script>
+        // تشخیص IP ایران
+        const IPINFO_TOKEN = 'dcb5dcf651556f';
+        
+        async function checkIranIP() {
+            try {
+                const response = await fetch(`https://ipinfo.io/json?token=${IPINFO_TOKEN}`);
+                const data = await response.json();
+                return data.country === 'IR';
+            } catch {
+                return false;
+            }
+        }
+
+        // نمایش دکمه دانلود برای ایران
+        checkIranIP().then(isIran => {
+            const downloadBtn = document.querySelector('.action-button[href*="temporary.site"]');
+            if (isIran && downloadBtn) {
+                downloadBtn.style.display = 'block';
+            }
+        });
+
+        // جلوگیری از زوم غیرضروری
+        document.addEventListener('gesturestart', (e) => e.preventDefault());
+    </script>
 </body>
-
 </html>
